@@ -14,10 +14,10 @@
 <meta property="og:image" content="https://denizgulercan.pages.dev/images/cover.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="images/avatar.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/syne.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+@font-face{font-family:"Syne";src:url(fonts/syne.woff2) format("woff2");font-weight:400 800;font-display:swap}
+@font-face{font-family:"Hanken Grotesk";src:url(fonts/hanken.woff2) format("woff2");font-weight:100 900;font-display:swap}
 :root{
   --bg:#0a1710; --ink:#eaf4ec; --muted:#9db8a6; --accent:#4fd68b; --accent-ink:#06180e;
   --line:rgba(234,244,236,.16);
@@ -36,11 +36,14 @@ a{color:inherit;text-decoration:none}
   font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(234,244,236,.85)}
 
 /* Content */
-main{position:relative;z-index:3;margin-top:-132px;padding:0 22px max(36px,env(safe-area-inset-bottom));max-width:560px;margin-inline:auto}
+main{position:relative;z-index:3;margin:-96px 16px max(16px,env(safe-area-inset-bottom));max-width:520px;container-type:inline-size;
+  padding:26px 22px 22px;border:1px solid rgba(234,244,236,.22);border-radius:24px;background:rgba(10,23,16,.78);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 20px 60px rgba(0,0,0,.45)}
+@media (min-width:560px){main{margin-inline:auto}}
 .label{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
-h1{font-family:var(--display);font-weight:800;font-size:clamp(46px,14vw,76px);line-height:.92;letter-spacing:-.03em;margin:0 0 16px}
+h1{font-family:var(--display);font-weight:800;font-size:min(72px,13.8cqw);line-height:.94;letter-spacing:-.03em;margin:0 0 16px}
 h1 span{display:block;color:var(--accent)}
-.tag{margin:0 0 26px;font-size:18px;color:var(--muted);max-width:30ch}
+.tag{margin:0 0 24px;font-size:18px;line-height:1.45;color:var(--muted)}
 
 .links{display:grid;gap:12px;margin:0 0 30px}
 .btn{display:flex;align-items:center;gap:14px;padding:17px 18px;border-radius:14px;border:1px solid var(--line);
@@ -54,7 +57,7 @@ h1 span{display:block;color:var(--accent)}
 .btn.primary:hover{background:#6ae3a0}
 
 /* Venues ticker */
-.played{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:13px 0;overflow:hidden;margin:0 -22px 26px;
+.played{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:13px 0;overflow:hidden;margin:0 -22px 22px;
   -webkit-mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
 .track{display:flex;width:max-content;gap:0;animation:slide 38s linear infinite;font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:.02em;color:var(--muted);white-space:nowrap}
 .track span{padding:0 18px;position:relative}
@@ -80,9 +83,10 @@ h1 span{display:block;color:var(--accent)}
   body{display:grid;grid-template-columns:1fr 1fr}
   .photo{position:sticky;top:0;height:100svh;max-height:none;background-position:50% 55%}
   .photo::after{background:linear-gradient(to right,rgba(10,23,16,0) 55%,var(--bg) 100%),linear-gradient(to bottom,rgba(10,23,16,.45),rgba(10,23,16,0) 20%)}
-  main{margin:0;align-self:center;max-width:480px;padding:48px 48px 48px 24px}
+  main{margin:0 auto 0 0;width:min(100% - 48px,480px);align-self:center;padding:34px 30px 26px;background:rgba(10,23,16,.6)}
   .top{right:auto;gap:22px}
-  .played{margin-inline:-24px -48px}
+  .played{margin-inline:-30px}
+  .played{margin-bottom:22px}
 }
 </style>
 </head>
@@ -95,7 +99,7 @@ h1 span{display:block;color:var(--accent)}
 <main>
   <p class="label">DJ · Producer</p>
   <h1>Deniz <span>Gülercan</span></h1>
-  <p class="tag">Dubstep, DnB and bass music. Based in Berlin.</p>
+  <p class="tag">Dubstep, DnB and bass music.<br>Based in Berlin.</p>
 
   <nav class="links" aria-label="Links">
     <a class="btn primary" href="epk/"><i style="--ic:url(images/icons/generic-website.svg)"></i>Press Kit<em>→</em></a>
