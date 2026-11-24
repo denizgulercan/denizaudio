@@ -55,6 +55,9 @@ h1 span { display: block; color: var(--accent); }
 .cap strong { font-family: var(--display); font-size: 26px; line-height: 1.05; }
 .cap small { display: block; font-size: 14px; opacity: .88; }
 .arrow { font-size: 28px; line-height: 1; }
+.tile { position: relative; }
+.dl { position: absolute; top: 14px; right: 14px; padding: 8px 14px; background: rgba(255,255,255,.92); color: #000; font: 700 14px var(--body); text-decoration: none; border-radius: 999px; }
+.dl:hover, .dl:focus-visible { background: #fff; }
 
 .info { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding: 48px 0; border-top: 1px solid var(--rule); }
 h2 { font-family: var(--display); font-weight: 800; font-size: clamp(28px, 4vw, 40px); line-height: 1.1; letter-spacing: -.02em; margin: 10px 0 22px; text-wrap: balance; }
@@ -98,14 +101,20 @@ footer a:hover { color: var(--accent); }
   </section>
 
   <section class="pair" aria-label="Instagram and SoundCloud">
+    <div class="tile">
     <a class="shot" href="https://www.instagram.com/deniz.gulercan/" target="_blank" rel="noopener">
       <img src="img/hero.jpg" alt="Deniz Gülercan seated between two CDJs and a mixer, lit in orange" width="1200" height="1800">
       <span class="cap"><span><strong>Instagram</strong><small>@deniz.gulercan</small></span><span class="arrow" aria-hidden="true">↗</span></span>
     </a>
+    <a class="dl" href="img/hero.jpg" download="Deniz-Gulercan-press-photo-1.jpg">↓ Download photo</a>
+    </div>
+    <div class="tile">
     <a class="shot" href="https://soundcloud.com/denizgulercan" target="_blank" rel="noopener">
       <img src="img/bw.jpg" alt="Deniz in sunglasses mixing on a Pioneer DJ controller by the sea, black and white" width="1200" height="1800">
       <span class="cap"><span><strong>SoundCloud</strong><small>denizgulercan</small></span><span class="arrow" aria-hidden="true">↗</span></span>
     </a>
+    <a class="dl" href="img/bw.jpg" download="Deniz-Gulercan-press-photo-2.jpg">↓ Download photo</a>
+    </div>
   </section>
 
   <section class="info">
